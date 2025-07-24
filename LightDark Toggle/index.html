@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+  <h1>Theme Switcher</h1>
+  <button onclick="toggle()">Toggle Theme</button>
+  
+  <script >
+    function toggle() {
+      document.body.style.background = document.body.style.background === "black" ? "white" : "black";
+      
+      document.body.style.color = document.body.style.color === "white" ? "black" : "white";
+    }
+  </script>
+</body>
+
+</html>
