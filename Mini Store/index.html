@@ -29,7 +29,6 @@
       color: #ffc107;
     }
 
-    /* Product cards container */
     .container-card {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -37,7 +36,6 @@
       padding: 30px;
     }
 
-    /* Login/Register box */
     .form-box {
       max-width: 400px;
       margin: 50px auto;
@@ -58,17 +56,17 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+ 
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Mini Store</a>
     
-    <!-- Toggle button for mobile -->
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar links -->
+   
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -89,14 +87,8 @@
     </div>
   </div>
 </nav>
-
-
-  <!-- Products -->
   <div id="productsSection" class="container-card">
-    <!-- JS will insert product cards here -->
   </div>
-
-  <!-- Cart Page -->
   <div id="cartPage" class="container mt-5" style="display:none;">
     <h3 class="text-center mb-4">🛒 Shopping Cart</h3>
     <div class="table-responsive">
@@ -114,8 +106,7 @@
       </table>
     </div>
   </div>
-
-  <!-- Login Form -->
+  
   <div class="form-box" id="loginBox" style="display:none;">
     <h3>Login</h3>
     <input class="form-control mb-3" type="text" id="loginUser" placeholder="Username" />
@@ -126,7 +117,6 @@
     </p>
   </div>
 
-  <!-- Register Form -->
   <div class="form-box" id="registerBox" style="display:none;">
     <h3>Register</h3>
     <input class="form-control mb-3" type="text" id="regUser" placeholder="New Username" />
