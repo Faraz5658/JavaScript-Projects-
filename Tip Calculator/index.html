@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="font-family: Arial, sans-serif; max-width: 400px; margin: 20px auto; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <h2>Tip Calculator</h2>
+        <div style="margin-bottom: 15px;">
+            <label for="bill">Bill Amount: $</label>
+            <input id="bill" type="number" min="0" step="0.01" placeholder="Enter bill amount">
+        </div>
+        
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button onclick="tip()" style="padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">15% Tip</button>
+            
+            <div style="display: flex; align-items: center;">
+                <input id="percentage" type="number" min="0" max="100" value="20" style="width: 60px; margin-right: 5px;">
+                <span>%</span>
+                <button onclick="customTip()" style="margin-left: 10px; padding: 8px 15px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer;">Custom Tip</button>
+            </div>
+        </div>
+        
+        <div id="out" style="font-size: 18px; font-weight: bold; padding: 10px; background-color: #f5f5f5; border-radius: 4px;"></div>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+</html>
