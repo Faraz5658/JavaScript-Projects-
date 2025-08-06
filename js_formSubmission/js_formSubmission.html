@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green {padding: 20px; background: green; color: white;}
+        .blue {padding: 20px; background: teal; color: white;}
+        .red {padding: 20px; background: red; color: white;}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            
+        </nav>
+    </header>
+    <section>
+        <article>
+            <input type="text" onkeyup="doshow(this)" /><span id="res1">Wait</span> <br />
+            <input type="text" onkeyup="docount(this)" /><span id="res2">0</span> <br />
+            <input type="text" onkeyup="docheck(this)" /><span id="res3">Status</span> <br />
+        </article>
+    </section>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+    <script>
+        function doshow(letter)
+        {
+            var sletter = letter.value;
+            document.getElementById("res1").innerText = sletter;
+        }
+        
+        function docount(letter)
+        {
+            var count = letter.value.length;
+            document.getElementById("res2").innerText = count;
+        }
+        
+        function docheck(letter)
+        {
+            var count = letter.value.length;
+            // document.getElementById("res3").innerText = count;
+
+            if(count>=12)
+            {
+                document.getElementById("res3").innerText = "Strong";
+                document.getElementById("res3").classList.add("green");
+                document.getElementById("res3").classList.remove("blue");
+                document.getElementById("res3").classList.remove("red");
+                // document.getElementById("res3").style.color = "white";
+                // document.getElementById("res3").style.background = "green";
+                // document.getElementById("res3").style.padding = "20px";
+            }
+            else if(count>=8)
+            {
+                document.getElementById("res3").innerText = "Normal";
+                document.getElementById("res3").classList.add("blue");
+                document.getElementById("res3").classList.remove("green");
+                document.getElementById("res3").classList.remove("red");
+                // document.getElementById("res3").style.color = "white";
+                // document.getElementById("res3").style.background = "teal";
+                // document.getElementById("res3").style.padding = "20px";
+            }
+            else if(count>0)
+            {
+                document.getElementById("res3").innerText = "Weak";
+                document.getElementById("res3").classList.add("red");
+                document.getElementById("res3").classList.remove("blue");
+                document.getElementById("res3").classList.remove("green");
+                // document.getElementById("res3").style.color = "white";
+                // document.getElementById("res3").style.background = "crimson";
+                // document.getElementById("res3").style.padding = "20px";
+            }
+            else
+            {
+                document.getElementById("res3").innerText = "";
+                document.getElementById("res3").style.color = "black";
+                document.getElementById("res3").style.background = "white";
+            }
+
+
+        }
+
+
+    </script>
+</body>
+</html>
