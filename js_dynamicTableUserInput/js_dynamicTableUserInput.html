@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record</title>
+    <style>
+        table {border-spacing: 10px; border-collapse: separate;}
+        thead {background: teal; color: white; font-family: verdana; font-size: 12px;}
+        tbody {background: lightgray; color: black; font-family: calibri; font-size: 13px;}
+        tfoot {background: black; color: white; font-family: corbel; font-size: 12px;}
+        th, td {padding: 5px;}
+        table caption {font-family: candara; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <section>
+        <article>
+            <label>USER ID: </label><input type="number" id="txtid" required placeholder="Number"/><br />
+            <label>USER NAME: </label><input type="text" id="txtname" required placeholder="Enter Full Name"/><br />
+            <label>USER AGE: </label><input type="number" id="txtage" required placeholder="Number"/><br />
+            <label>USER CITY: </label><input type="text" id="txtcity" required placeholder="Enter City Name"/><br />
+            <button onclick="dosave()">Add Record</button>
+        </article>
+        <article>
+            <table>
+                <caption><h2>ITSAWK STUDENTS RECORD</h2></caption>
+                <thead>
+                    <tr>
+                        <th>STD ID</th><th>STD NAME</th><th>STD AGE</th><th>STD CITY</th>
+                    </tr>
+                </thead>
+                <tbody id="tbdy">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3">Total records: </th><th><span id="recordCount">0</span></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </article>
+    </section>
+
+    <script>
+        function dosave() {
+            var userid = document.getElementById("txtid").value.trim();
+            var username = document.getElementById("txtname").value.trim();
+            var userage = document.getElementById("txtage").value.trim();
+            var usercity = document.getElementById("txtcity").value.trim();
+
+            if (userid === "" || username === "" || userage === "" || usercity === "") {
+                alert("Please fill in all fields!");
+                return;
+            }
+
+            var tbody = document.getElementById("tbdy");
+            var row = document.createElement("tr");
+
+            var col1 = document.createElement("td");
+            var col2 = document.createElement("td");
+            var col3 = document.createElement("td");
+            var col4 = document.createElement("td");
+
+            col1.innerText = userid;
+            col2.innerText = username;
+            col3.innerText = userage;
+            col4.innerText = usercity;
+
+            row.appendChild(col1);
+            row.appendChild(col2);
+            row.appendChild(col3);
+            row.appendChild(col4);
+            tbody.appendChild(row);
+
+            // Update record count
+            document.getElementById("recordCount").innerText = tbody.getElementsByTagName("tr").length;
+
+            // Clear input fields
+            document.getElementById("txtid").value = "";
+            document.getElementById("txtname").value = "";
+            document.getElementById("txtage").value = "";
+            document.getElementById("txtcity").value = "";
+        }
+    </script>
+</body>
+</html>
