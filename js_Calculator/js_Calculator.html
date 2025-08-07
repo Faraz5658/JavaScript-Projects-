@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calc {height: 420px; width: 350px; border: 2px solid red;}
+        .result {height: 50px; width: 98%; font-family: verdana; font-size: 2em;}
+        .btns {height: 365px; width: 80%; background: hotpink; float: left;}
+        .oprt {height: 365px; width: 20%; background: gold; float: right;}
+
+        button {font-family: verdana; font-size: 2em;}
+        .btns button {height: 90px; width: 90px;}
+        .oprt button {height: 90px; width: 69px;  font-weight: bold; margin-left: 1px;}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            
+        </nav>
+    </header>
+    <section>
+        <article>
+            <div class="calc">
+                <input type="text" class="result" id="result" />
+                <div class="btns">
+                    <button onclick="doshow(this)">1</button>
+                    <button onclick="doshow(this)">2</button>
+                    <button onclick="doshow(this)">3</button>
+                    <button onclick="doshow(this)">4</button>
+                    <button onclick="doshow(this)">5</button>
+                    <button onclick="doshow(this)">6</button>
+                    <button onclick="doshow(this)">7</button>
+                    <button onclick="doshow(this)">8</button>
+                    <button onclick="doshow(this)">9</button>
+                    <button onclick="doshow(this)">0</button>
+                    
+                    <button style="width: 184px;" onclick="docalc()">Calc</button>
+                </div>
+                <div class="oprt">
+                    <button onclick="midcalc(this)">+</button>
+                    <button onclick="midcalc(this)">-</button>
+                    <button onclick="midcalc(this)">*</button>
+                    <button onclick="midcalc(this)">/</button>
+                    
+                </div>
+            </div>
+        </article>
+    </section>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+    <script>
+        var firstValue,secondValue;
+        var choice;
+
+        function doshow(num)
+        {
+            document.getElementById("result").value += num.innerText;
+            // document.getElementById("result").value = document.getElementById("result").value + num.innerText;
+        }
+
+        function midcalc(oprt)
+        {
+            choice = oprt.innerText;
+            firstValue = document.getElementById("result").value;
+            document.getElementById("result").value = "";
+        }
+
+        function docalc()
+        {
+            // var rslt = document.getElementById("result").value;
+            // var ans = eval(rslt);
+            // document.getElementById("result").value = ans;
+
+            secondValue = document.getElementById("result").value;
+
+            var res;
+
+            switch(choice)
+            {
+                case '+':
+                    res = Number(firstValue) + Number(secondValue);
+                    break;
+                case '-':
+                    res = Number(firstValue) - Number(secondValue);
+                    break;
+                case '*':
+                    res = Number(firstValue) * Number(secondValue);
+                    break;
+                case '/':
+                    res = Number(firstValue) / Number(secondValue);
+                    break;
+            }
+
+            
+
+            document.getElementById("result").value = res;
+
+        }
+
+    </script>
+</body>
+</html>
